@@ -5,8 +5,12 @@ import java.awt.*;
 
 public class Program extends JFrame{
 	
+	
+	
 	JTextArea display;
-	JRadioButton allaButton;
+	private JRadioButton namnSort = new JRadioButton("Namn",false);
+	private JRadioButton vardeSort = new JRadioButton("Värde", false);
+
 	
 	Program(){
 		
@@ -17,6 +21,18 @@ public class Program extends JFrame{
 		JScrollPane scroll = new JScrollPane(display);
 		display.setEditable(false);
 		add(scroll, BorderLayout.CENTER);
+		
+		JPanel topPanel = new JPanel();
+        add(topPanel, BorderLayout.NORTH);
+        topPanel.add(new JLabel("Värdesaker"));
+		
+		
+		JPanel hogra=new JPanel();
+		hogra.setLayout(new BoxLayout(hogra, BoxLayout.Y_AXIS));
+		add(hogra,BorderLayout.EAST);
+		hogra.add(new JLabel("Sortering"));
+		hogra.add(namnSort);
+		hogra.add(vardeSort);
 		
 		
 		
